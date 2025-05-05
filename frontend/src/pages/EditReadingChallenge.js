@@ -23,7 +23,7 @@ const EditReadingChallenge = () => {
   
       try {
         const response = await fetch(
-          `${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/api/readingChallenge/getChallenge/${userId}`,  // Only pass userId
+          `http://localhost:3000/api/readingChallenge/getChallenge/${userId}`,  // Only pass userId
           {
             method: "GET",
             headers: {
@@ -59,7 +59,7 @@ const EditReadingChallenge = () => {
 
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/api/readingChallenge/setChallenge/${userId}/${currentYear}`,
+        `http://localhost:3000/api/readingChallenge/setChallenge/${userId}/${currentYear}`,
         {
           method: "PUT",
           headers: {
@@ -101,12 +101,12 @@ const EditReadingChallenge = () => {
   
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/api/readingChallenge/setChallenge/${userId}/${currentYear}`,
+        `http://localhost:3000/api/readingChallenge/setChallenge/${userId}/${currentYear}`,
         {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
-            "Authorization": `Bearer ${token}`, 
+            "Authorization": `Bearer ${token}`, // ✅ ADD THIS
           },
           body: JSON.stringify({ goal: parsedGoal }),
         }
@@ -120,8 +120,8 @@ const EditReadingChallenge = () => {
         throw new Error(`[DEBUG] Failed to update goal: ${response.statusText}`);
       }
   
-      setGoal(parsedGoal);                 
-      setEditedGoal(parsedGoal);         
+      setGoal(parsedGoal);                 // ✅ Update state
+      setEditedGoal(parsedGoal);          // Optional, depends on your use
       setConfirmationVisible(true);
       setGoalInput("");
       setGoalInputVisible(false);
