@@ -12,7 +12,24 @@ const app = express();
 
 // Middleware
 app.use(express.json());
-app.use(cors({ origin: "http://localhost:3000", credentials: true }));
+
+const allowedOrigins = [
+  "http://localhost:3000",                  // local dev
+  "https://readhive-1.onrender.com"        // deployed frontend
+];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like mobile apps or curl)
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true,
+}));
+
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI)
