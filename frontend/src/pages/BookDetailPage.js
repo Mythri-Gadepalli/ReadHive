@@ -39,8 +39,8 @@ const BookDetailPage = () => {
 
     try {
       // Send the status update request to the backend
-      console.log(`Sending POST request to update book status. URL: http://localhost:3000/api/readingChallenge/updateBookStatus`);
-      const res = await axios.post(`${import.meta.env.BASEURL}/api/readingChallenge/updateBookStatus`, {
+      console.log(`Sending POST request to update book status. URL: https://readhive.onrender.com/api/readingChallenge/updateBookStatus`);
+      const res = await axios.post(`https://readhive.onrender.com/api/readingChallenge/updateBookStatus`, {
         userId,
         bookId,
         status: listType.toLowerCase(), // Convert to lowercase ('reading', 'will read', 'read')
@@ -68,8 +68,8 @@ const BookDetailPage = () => {
   
     try {
       // Send the delete request to remove the book from the list
-      console.log(`Sending DELETE request to remove book from the list. URL: http://localhost:3000/api/readingChallenge/removeBook`);
-      const res = await axios.delete(`${import.meta.env.BASEURL}/api/readingChallenge/removeBook`, {
+      console.log(`Sending DELETE request to remove book from the list. URL:https://readhive.onrender.com/api/readingChallenge/removeBook`);
+      const res = await axios.delete(`https://readhive.onrender.com/api/readingChallenge/removeBook`, {
         data: {
           userId,
           bookId,
