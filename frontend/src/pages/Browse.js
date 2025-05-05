@@ -20,7 +20,7 @@ const Browse = () => {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const res = await axios.get(`/api/books/search?q=${selectedGenre}`);
+        const res = await axios.get(`https://readhive.onrender.com/api/books/search?q=${selectedGenre}`);
         let filtered = res.data.items || [];
 
         filtered = filtered.filter((book) => {
