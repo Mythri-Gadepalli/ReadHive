@@ -62,7 +62,7 @@ const Profile = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const res = await fetch(`/api/auth/user/${userId}`);
+        const res = await fetch(`https://readhive.onrender.com/api/auth/user/${userId}`);
         const data = await res.json();
         setUser(data);
       } catch (err) {
