@@ -27,7 +27,7 @@ const Home = () => {
 
       try {
         // Fetch user profile to get favorite genres
-        const res = await fetch(`/api/auth/user/${userId}`, {
+        const res = await fetch(`https://readhive.onrender.com/api/auth/user/${userId}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -66,7 +66,7 @@ const Home = () => {
 
     const fetchBooks = async () => {
       try {
-        const res = await axios.get(`/api/books/search?q=${selectedGenre}`);
+        const res = await axios.get(`https://readhive.onrender.com/api/books/search?q=${selectedGenre}`);
         setBooks(res.data.items || []);
       } catch (err) {
         console.error("Error fetching books:", err);
