@@ -23,7 +23,7 @@ const EditReadingChallenge = () => {
   
       try {
         const response = await fetch(
-          `${import.meta.env.BASEURL}/api/readingChallenge/getChallenge/${userId}`,  // Only pass userId
+          `https://readhive.onrender.com/api/readingChallenge/getChallenge/${userId}`,  // Only pass userId
           {
             method: "GET",
             headers: {
@@ -59,7 +59,7 @@ const EditReadingChallenge = () => {
 
     try {
       const response = await fetch(
-        `${import.meta.env.BASEURL}/api/readingChallenge/setChallenge/${userId}/${currentYear}`,
+        `https://readhive.onrender.com/api/readingChallenge/setChallenge/${userId}/${currentYear}`,
         {
           method: "PUT",
           headers: {
@@ -101,7 +101,7 @@ const EditReadingChallenge = () => {
   
     try {
       const response = await fetch(
-       `${import.meta.env.BASEURL}/api/readingChallenge/setChallenge/${userId}/${currentYear}`,
+       `https://readhive.onrender.com/api/readingChallenge/setChallenge/${userId}/${currentYear}`,
         {
           method: "PUT",
           headers: {
