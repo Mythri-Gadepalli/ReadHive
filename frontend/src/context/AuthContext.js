@@ -11,7 +11,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (username, password) => {
     try {
-      const response = await axios.post("http://localhost:5001/api/auth/login", {
+      const response = await axios.post("https://readhive.onrender.com/api/auth/login", {
         username,
         password,
       });
@@ -48,7 +48,7 @@ export const AuthProvider = ({ children }) => {
 
   const register = async (username, email, password, confirmPassword) => {
     try {
-      const res = await axios.post("/api/auth/register", {
+      const res = await axios.post("https://readhive.onrender.com/api/auth/register", {
         username,
         email,
         password,
