@@ -9,7 +9,7 @@ const BookSearchResults = ({ query }) => {
 
     const fetchBooks = async () => {
       try {
-        const res = await axios.get(`/api/books/search?q=${query}`);
+        const res = await axios.get(`https://readhive.onrender.com/api/books/search?q=${query}`);
         setBooks(res.data.items || []);
       } catch (error) {
         console.error("Error fetching books:", error);
