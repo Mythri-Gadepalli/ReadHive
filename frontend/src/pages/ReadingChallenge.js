@@ -13,7 +13,7 @@ const ReadingChallenge = () => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await axios.get(`/api/readingChallenge/${userId}`);
+        const response = await axios.get(`https://readhive.onrender.com/api/readingChallenge/${userId}`);
         console.log("User data fetched:", response.data);
         setUserData(response.data);
         setLoading(false);
