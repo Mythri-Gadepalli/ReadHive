@@ -15,7 +15,7 @@ const Search = () => {
         return;
       }
       try {
-        const res = await axios.get(`/api/books/search?q=${query}`);
+        const res = await axios.get(`https://readhive.onrender.com/api/books/search?q=${query}`);
         setResults(res.data.items || []);
       } catch (err) {
         console.error("Error searching books:", err);
