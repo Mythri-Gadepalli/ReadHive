@@ -128,7 +128,7 @@ const EditProfile = () => {
 
     if (userId) {
       // Make an API call to fetch user data based on the userId
-      axios.get(`http://localhost:5001/api/auth/user/${userId}`, {
+      axios.get(`https://readhive.onrender.com/api/auth/user/${userId}`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}` // Include JWT token in headers
         }
@@ -179,7 +179,7 @@ const EditProfile = () => {
   
     setLoading(true); // Show loading indicator while updating
   
-    axios.put(`http://localhost:5001/api/auth/user/${userId}`, { username, favoriteGenres }, {
+    axios.put(`https://readhive.onrender.com/api/auth/user/${userId}`, { username, favoriteGenres }, {
       headers: {
         'Authorization': `Bearer ${localStorage.getItem('token')}` // Include JWT token in headers
       }
